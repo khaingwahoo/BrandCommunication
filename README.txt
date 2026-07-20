@@ -1,0 +1,1 @@
+Unzip the folder and open index.html in Chrome or Edge. The website contains 10 responsive projects with five images per project. Use the market and service filters, then click a project to open its gallery.
