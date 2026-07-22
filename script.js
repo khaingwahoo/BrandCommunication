@@ -6,6 +6,7 @@ const modal = document.getElementById('projectModal');
 const modalTitle = document.getElementById('modalTitle');
 const modalMeta = document.getElementById('modalMeta');
 const modalGallery = document.getElementById('modalGallery');
+const modalDescription = document.getElementById('modalDescription');
 const menuButton = document.querySelector('.menu-button');
 const mainNav = document.querySelector('.main-nav');
 const headerRight = document.querySelector('.header-right');
@@ -54,6 +55,7 @@ function openProject(id) {
   if (!project) return;
   modalTitle.textContent = project.title;
   modalMeta.textContent = `${project.market} · ${project.service}`;
+  if (modalDescription) modalDescription.textContent = project.description || 'Five visual moments from the project, showing the experience from overall environment to detailed touchpoints.';
   modalGallery.innerHTML = project.images.map((src, index) =>
     `<figure><img src="${src}" alt="${project.title} project image ${index + 1}" loading="lazy"></figure>`
   ).join('');
@@ -88,7 +90,7 @@ window.addEventListener('load', () => {
   window.setTimeout(() => introLoader?.classList.add('done'), 1450);
 });
 
-const revealTargets = document.querySelectorAll('.about-content, .about-image, .services-heading, .service-grid, .portfolio-heading, .filters, .portfolio-grid, .process-copy, .process ol, .contact > div, footer');
+const revealTargets = document.querySelectorAll('.about-content, .about-image, .services-heading, .service-grid, .portfolio-heading, .filters, .portfolio-grid, .studio-story-copy, .studio-story-image, .process-copy, .process ol, .contact > div, footer');
 revealTargets.forEach((el) => {
   el.classList.add(el.matches('.service-grid, .process ol') ? 'reveal-stagger' : 'reveal');
 });
